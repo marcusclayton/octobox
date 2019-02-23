@@ -7,6 +7,9 @@ class TasksTest < ActiveSupport::TestCase
   end
 
   test 'fetches notifications' do
+    stub_notifications_request
+    stub_fetch_subject_enabled(value: false)
+
     travel_to "2016-12-19T19:00:00Z" do
       user = create(:user)
 

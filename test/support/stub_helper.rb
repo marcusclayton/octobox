@@ -49,6 +49,8 @@ module StubHelper
       .to_return({ status: 200, body: file_fixture('subject_57.json'), headers: headers })
       stub_request(:get, 'https://api.github.com/repos/octobox/octobox/commits/6dcb09b5b57875f334f61aebed695e2e4193db5e')
       .to_return({ status: 200, body: file_fixture('commit_no_author.json'), headers: { 'Content-Type' => 'application/json' } })
+      stub_request(:get, 'https://api.github.com/repos/octobox/octobox/issues/56/comments?since=2016-12-22%2016:57:14%20UTC')
+      .to_return({ status: 200, body: file_fixture('comments_since.json'), headers: { 'Content-Type' => 'application/json' } })
     end
 
     url ||= %r{https://api.github.com/notifications}

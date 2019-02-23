@@ -16,7 +16,7 @@ class ConfiguratorTest < ActiveSupport::TestCase
   end
 
   test "config.scopes defaults to 'notifications'" do
-    assert_equal 'notifications', Octobox.config.scopes
+    assert_equal 'notifications, repo', Octobox.config.scopes
   end
 
   test "when ENV['RESTRICTED_ACCESS_ENABLED'] is true, config.scopes includes read:org" do
